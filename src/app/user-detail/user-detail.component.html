@@ -1,0 +1,14 @@
+<div *ngIf="user">
+    <h2>{{user.firstname + ' ' + user.lastname | uppercase}} Details</h2>
+    <div class="userId"><span>id: </span>{{user.id}}</div>
+    <div>
+        <div class="detail"><span>firstname: </span>{{user.firstname}}</div>
+        <div class="detail"><span>lastname: </span>{{user.lastname}}</div>
+        <div class="detail"><span>email: </span>{{user.email}}</div>
+        <div class="detail"><span>type: </span>{{user.type}}</div>
+        <div class="detail"><span>date: </span>{{user.date}}</div>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="goBack()">
+        Go Back
+      </button>
+</div>

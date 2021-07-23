@@ -1,0 +1,21 @@
+<div class="wrapper">
+    <button type="button" class="btn btn-secondary" (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">Search User
+    </button>
+</div>
+
+<hr>
+<div id="collapseBasic" [collapse]="!isCollapsed">
+    <div class="well well-lg card card-block card-header">
+        <div class="container">
+            <form [formGroup]="searchForm" (ngSubmit)="findUsers()">
+                <h1>Search User</h1>
+                <input type="email" placeholder="email" formControlName="email">
+                <input type="text" placeholder="type" formControlName="type">
+                <input type="date" formControlName="dateFrom">
+                <input type="date" formControlName="dateTo">
+                <button type="submit">Search User</button>
+            </form>
+        </div>
+    </div>
+</div>

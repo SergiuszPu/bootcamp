@@ -1,0 +1,49 @@
+<div class="container">
+    <table>
+        <tr>
+            <th *ngFor="let head of headers">
+                {{head}}
+            </th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor="let user of users$ | async">
+            <td>
+                {{user.id}}
+            </td>
+            <td>
+                {{user.email}}
+            </td>
+            <td>
+                {{user.type}}
+            </td>
+            <td>
+                {{user.firstname}}
+            </td>
+            <td>
+                {{user.lastname}}
+            </td>
+            <td>
+                <button type="button" class="btn btn-primary" routerLink="/detail/{{user.id}}">
+                    Detail
+                </button>
+                <button type="button" class="btn btn-primary btn2" (click)="openModal(template)">Remove</button>
+
+                <ng-template #template>
+                    <div class="modal-header">
+                        <h4 class="modal-title pull-left">Remove Modal</h4>
+                        <button type="button" class="close pull-right" aria-label="Close" >
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Do you really whant remove this user 
+                        <button type="button" class="btn btn-primary" (click)="remove(user.id)" (click)="modalRef.hide()">
+                            Remove
+                          </button>
+                    </div>
+                </ng-template>
+            </td>
+        </tr>
+    </table>
+
+</div>

@@ -1,0 +1,19 @@
+<div class="container">
+    <form [formGroup]="userForms" (ngSubmit)="submitForm(userForms)">
+        <h1>Add User</h1>
+        <input type="text" placeholder="firstname" formControlName="firstname">
+        <span *ngIf="firstnameControl?.touched"></span>
+        <input type="text" placeholder="lastname" formControlName="lastname">
+        <span *ngIf="lastnameControl?.valid"></span>
+        <input type="email" placeholder="email" #email formControlName="email">
+        <span *ngIf="lastnameControl?.valid"></span>
+        <span *ngIf="emailControl?.invalid">ZŁy email</span>
+        <input type="date" formControlName="date">
+        <select formControlName="type">
+            <option id="worker">worker</option>
+            <option id="menager">menager</option>
+            <option id="boss">boss</option>
+        </select>
+        <button [disabled]=!userForms.valid>Submit</button>
+    </form>
+</div>

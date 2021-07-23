@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <button type="button" class="btn btn-secondary" (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">Add User
+</button>
+</div>
+
+<hr>
+<div id="collapseBasic" [collapse]="!isCollapsed">
+  <div class="well well-lg card card-block card-header">
+    <app-add-user-forms></app-add-user-forms>
+  </div>
+</div>
+
+

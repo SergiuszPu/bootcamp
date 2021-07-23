@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstname": "Sergiusz",
+      "lastname": "Pu",
+      "email": "sergio@gmail.com",
+      "type": "worker",
+      "date": "1985.05.27"
+    },
+    {
+      "firstname": "Ktos",
+      "lastname": "Tam",
+      "email": "bo@wp",
+      "date": "2005-11-02",
+      "type": "menager",
+      "id": 5
+    }
+  ]
+}
