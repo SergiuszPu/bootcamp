@@ -1,6 +1,6 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { UserService } from '../user-service.service';
-import {User} from '../user'
+import { UserService } from '../user.service';
+import { User } from '../user'
 import { Observable } from 'rxjs';
 
 //Bootstrap
@@ -15,18 +15,18 @@ export class EditUserComponent implements OnInit {
 
   headers: string[] = ["id", "email", "type", "firstname", "lastname"];
   users: any[] = []
-  users$ :Observable<User[]> | null = null
+  users$: Observable<User[]> | null = null
   modalRef!: BsModalRef;
 
   constructor(private userService: UserService,
               private modalService: BsModalService
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.users$ = this.userService.users$
   }
 
-  removeUserClick(id: number ) {
+  removeUserClick(id: number) {
     this.users = this.users.filter(user => user.id !== id)
     this.userService.deleteUser(id).subscribe()
     this.modalRef.hide();

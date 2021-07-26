@@ -29,4 +29,4 @@ import { UserDetailComponent } from '../user-detail/user-detail.component';
         UserDetailComponent,
     ]
 })
-export class UserModule { }
+export class UserModule { };

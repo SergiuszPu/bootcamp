@@ -3,8 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 import { User } from './user'
 import { BehaviorSubject, Observable } from 'rxjs';
-import { SearchParams } from './interface/search-params.model';
-
+import { SearchParams } from './modal/search-params.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +16,12 @@ export class UserService {
 
   usersUrl: string = "http://localhost:3000/users"
 
-  getUsers(): void {
-    this.http.get<User[]>(this.usersUrl).subscribe(data => this._users.next(data))
+  loadUsers(): void {
+   this.getUsers().subscribe(data => this._users.next(data))
+  }
+
+  getUsers() {
+    return this.http.get<User[]>(this.usersUrl)
   }
   getUser(id: number): Observable<User> {
     const url = `${this.usersUrl}/${id}`;

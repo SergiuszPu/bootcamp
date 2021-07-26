@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Observable } from 'rxjs';
 import { CustomEmailValidator } from '../email-validator';
 
-import { UserService } from '../user-service.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-add-user-forms',

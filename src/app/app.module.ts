@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //bootstrap
@@ -13,6 +12,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 
 //Components
 import { AppRoutingModule } from './app-routing.module';
+import { UsersExistGuard } from './user-exist-guard';
 
 @NgModule({
   declarations: [
@@ -26,9 +26,9 @@ import { AppRoutingModule } from './app-routing.module';
     CollapseModule.forRoot(),
     ButtonsModule.forRoot(),
     ModalModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
   ],
-  providers: [],
+  providers: [UsersExistGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

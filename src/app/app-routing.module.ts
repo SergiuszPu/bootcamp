@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-// import { UserDetailComponent } from './user-detail/user-detail.component';
-// import { UserComponent } from './user/user.component';
+import { UsersExistGuard } from './user-exist-guard';
 
 const routes: Routes = [
   {
@@ -9,7 +8,8 @@ const routes: Routes = [
   },
   {
     path: 'users',
-    loadChildren: () => import('./user/user.module').then(m => m.UserModule)
+    loadChildren: () => import('./user/user.module').then(m => m.UserModule),
+    canActivate: [UsersExistGuard]
   }
 ];
 
