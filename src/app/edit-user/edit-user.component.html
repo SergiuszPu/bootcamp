@@ -6,7 +6,7 @@
             </th>
             <th>Action</th>
         </tr>
-        <tr *ngFor="let user of users$ | async">
+        <tr *ngFor="let user of users$ | async | sort: 'firstname'">
             <td>
                 {{user.id}}
             </td>
@@ -23,21 +23,21 @@
                 {{user.lastname}}
             </td>
             <td>
-                <button type="button" class="btn btn-primary" routerLink="/detail/{{user.id}}">
+                <button type="button" class="btn btn-secondary" routerLink="/users/{{user.id}}">
                     Detail
                 </button>
-                <button type="button" class="btn btn-primary btn2" (click)="openModal(template)">Remove</button>
+                <button type="button" class="btn btn-secondary" (click)="openModal(template)">Remove</button>
 
                 <ng-template #template>
                     <div class="modal-header">
                         <h4 class="modal-title pull-left">Remove Modal</h4>
-                        <button type="button" class="close pull-right" aria-label="Close" >
+                        <button type="button" class="btn btn-secondary" aria-label="Close" (click)="modalRef.hide()">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         Do you really whant remove this user 
-                        <button type="button" class="btn btn-primary" (click)="remove(user.id)" (click)="modalRef.hide()">
+                        <button type="button" class="btn btn-danger" (click)="removeUserClick(user.id)">
                             Remove
                           </button>
                     </div>

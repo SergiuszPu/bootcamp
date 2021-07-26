@@ -23,17 +23,15 @@ export class EditUserComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.getUsersToEdit() 
     this.users$ = this.userService.users$
   }
 
-  getUsersToEdit() {
-  }
-
-  remove(id: number) {
+  removeUserClick(id: number ) {
     this.users = this.users.filter(user => user.id !== id)
     this.userService.deleteUser(id).subscribe()
+    this.modalRef.hide();
   }
+
   detailUser(id: number) {
     this.userService.getUser(id).subscribe()
   }

@@ -1,24 +1,30 @@
 .container {
     width: 100%;
 }
+
 table {
     margin: auto;
 }
+
 table, td {
     border: 1px solid black;
 }
+
 table th {
     width: 190px;
     background-color: rgb(46, 31, 31);
     color: white;
     text-align: center;
 }
+
 table td {
     text-align: center;
 }
+
 table td:last-of-type{
     width: 200px;
 }
+
 table td:last-of-type button {
     margin: 5px;
 }

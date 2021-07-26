@@ -12,7 +12,7 @@ import { Location } from '@angular/common';
 export class UserDetailComponent implements OnInit {
 
   user!: User
-  table: string[] = ['serg', 'tom','paw']
+
   constructor(private userService: UserService,
               private route: ActivatedRoute,
               private location: Location) { }
@@ -20,10 +20,12 @@ export class UserDetailComponent implements OnInit {
   ngOnInit(): void {
     this.getUser()
   }
+
   getUser() {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.userService.getUser(id).subscribe(user => this.user = user)
   }
+
   goBack(): void {
     this.location.back()
   }

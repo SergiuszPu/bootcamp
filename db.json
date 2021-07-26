@@ -14,7 +14,23 @@
       "email": "bo@wp",
       "date": "2005-11-02",
       "type": "menager",
+      "id": 3
+    },
+    {
+      "firstname": "Ktossdsd",
+      "lastname": "Tamsdsd",
+      "email": "bo@wps",
+      "date": "2005-11-02",
+      "type": "boss",
       "id": 5
+    },
+    {
+      "firstname": "Ktossad",
+      "lastname": "Tamsd",
+      "email": "bo@wp1",
+      "date": "2005-11-02",
+      "type": "menager",
+      "id": 2
     }
   ]
 }
