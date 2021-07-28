@@ -1,13 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserDetailComponent } from './user-detail/user-detail.component';
-import { UserComponent } from './user/user.component';
+import { UsersExistGuard } from './user-exist-guard';
+import { CatsEditComponent } from './user/cats/cats-edit.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/users', pathMatch: 'full' },
-  { path: 'users', component: UserComponent },
-  { path: 'detail', component: UserDetailComponent },
-  { path: 'detail/:id', component: UserDetailComponent},
+  {
+    path: '', redirectTo: '/users', pathMatch: 'full'
+  },
+  {
+    path: 'users',
+    loadChildren: () => import('./user/user.module').then(m => m.UserModule),
+    canActivate: [UsersExistGuard]
+  },
+  {
+    path: 'cats', component: CatsEditComponent
+  }
 ];
 
 @NgModule({

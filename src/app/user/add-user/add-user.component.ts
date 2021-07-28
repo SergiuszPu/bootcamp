@@ -1,17 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
   styleUrls: ['./add-user.component.css']
 })
-export class AddUserComponent implements OnInit {
+export class AddUserComponent {
 
   isCollapsed = false;
-  
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

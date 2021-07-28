@@ -3,7 +3,7 @@ import { AbstractControl, AsyncValidatorFn } from "@angular/forms";
 import { Observable, of } from "rxjs";
 import { map, debounceTime, take, switchMap } from "rxjs/operators";
 
-import { UserService } from "./user-service.service"
+import { UsersAPIService } from "./user-api.service"
 
 function isEmptyInputValue(value: any): boolean {
   return value === null || value.length === 0;
@@ -13,7 +13,7 @@ function isEmptyInputValue(value: any): boolean {
   providedIn: "root"
 })
 export class CustomEmailValidator {
-  constructor(private userService: UserService) {}
+  constructor(private userService: UsersAPIService) {}
 
   existingEmailValidator(initialEmail: string = ""): AsyncValidatorFn {
   

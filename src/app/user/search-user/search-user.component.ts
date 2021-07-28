@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserService } from '../user-service.service';
-import { SearchParams } from '../interface/searchParams';
+import { UsersAPIService } from '../../user-api.service';
 
 @Component({
   selector: 'app-search-user',
@@ -12,17 +11,18 @@ export class SearchUserComponent implements OnInit {
 
   searchForm: FormGroup;
   isCollapsed = true;
- 
+  filter: string = '';
 
   constructor(private fb: FormBuilder,
-              private userService: UserService,
+              private userService: UsersAPIService,
     ) { 
 
     this.searchForm = this.fb.group({
       email: ['',[ Validators.required, Validators.email]],
       type: ['', Validators.required],
       dateFrom: ['', Validators.required],
-      dateTo: ['', Validators.required]
+      dateTo: ['', Validators.required],
+      filter: [''],
     })
   }
 
@@ -31,7 +31,7 @@ export class SearchUserComponent implements OnInit {
   }
 
   findUsers() {
-    this.userService.getUserByParams(this.searchForm.value)
+    this.userService.getUserByParams(this.searchForm.value);
   }
 
 }
