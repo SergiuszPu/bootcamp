@@ -1,10 +1,10 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { UserService } from '../user.service';
-import { User } from '../user'
+import { User } from '../../user'
 import { Observable } from 'rxjs';
 
 //Bootstrap
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { UsersService } from '../store/users/users.service';
 
 @Component({
   selector: 'app-edit-user',
@@ -16,25 +16,28 @@ export class EditUserComponent implements OnInit {
   headers: string[] = ["id", "email", "type", "firstname", "lastname"];
   users: any[] = []
   users$: Observable<User[]> | null = null
+ 
   modalRef!: BsModalRef;
 
-  constructor(private userService: UserService,
-              private modalService: BsModalService
+  constructor(private modalService: BsModalService,
+              private usersService: UsersService,
   ) { }
 
   ngOnInit(): void {
-    this.users$ = this.userService.users$
+    this.usersService.loadUser()
+    this.users$ = this.usersService.getUsers()
   }
 
   removeUserClick(id: number) {
-    this.users = this.users.filter(user => user.id !== id)
-    this.userService.deleteUser(id).subscribe()
+    this.usersService.removeUser(id)
+    // this.users = this.users.filter(user => user.id !== id)
+    // this.userApiService.deleteUser(id).subscribe()
     this.modalRef.hide();
   }
 
-  detailUser(id: number) {
-    this.userService.getUser(id).subscribe()
-  }
+  // detailUser(id: number) {
+  //   this.userApiService.getUser(id).subscribe()
+  // }
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);

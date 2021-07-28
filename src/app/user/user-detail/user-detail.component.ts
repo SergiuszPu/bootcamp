@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../user';
-import { UserService } from '../user.service';
+import { User } from '../../user';
+import { UsersAPIService } from '../../user-api.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -13,7 +13,7 @@ export class UserDetailComponent implements OnInit {
 
   user!: User
 
-  constructor(private userService: UserService,
+  constructor(private userService: UsersAPIService,
               private route: ActivatedRoute,
               private location: Location) { }
 

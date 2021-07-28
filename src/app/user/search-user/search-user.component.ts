@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserService } from '../user.service';
+import { UsersAPIService } from '../../user-api.service';
 
 @Component({
   selector: 'app-search-user',
@@ -14,7 +14,7 @@ export class SearchUserComponent implements OnInit {
   filter: string = '';
 
   constructor(private fb: FormBuilder,
-              private userService: UserService,
+              private userService: UsersAPIService,
     ) { 
 
     this.searchForm = this.fb.group({

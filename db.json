@@ -1,28 +1,12 @@
 {
   "users": [
     {
-      "id": 1,
-      "firstname": "Sergiusz",
-      "lastname": "Pu",
-      "email": "sergio@gmail.com",
-      "type": "worker",
-      "date": "1985.05.27"
-    },
-    {
-      "firstname": "Ktos",
-      "lastname": "Tam",
-      "email": "bo@wp",
+      "firstname": "Ktosd33rssad",
+      "lastname": "Tamsdsfgsd",
+      "email": "bo@wp1",
       "date": "2005-11-02",
       "type": "menager",
-      "id": 3
-    },
-    {
-      "firstname": "Ktossdsd",
-      "lastname": "Tamsdsd",
-      "email": "bo@wps",
-      "date": "2005-11-02",
-      "type": "boss",
-      "id": 5
+      "id": 2
     },
     {
       "firstname": "Ktossad",
@@ -30,7 +14,67 @@
       "email": "bo@wp1",
       "date": "2005-11-02",
       "type": "menager",
-      "id": 2
+      "id": 4
+    },
+    {
+      "firstname": "tom",
+      "lastname": "boom",
+      "email": "sss@p",
+      "date": "2021-07-30",
+      "type": "menager",
+      "id": 5
+    },
+    {
+      "firstname": "sergiusz",
+      "lastname": "pu",
+      "email": "sss@wp",
+      "date": "2021-07-14",
+      "type": "boss",
+      "id": 6
+    },
+    {
+      "firstname": "Sergi",
+      "lastname": "New",
+      "email": "Spulane@wp.pl",
+      "date": "2021-06-30",
+      "type": "worker",
+      "id": 7
+    },
+    {
+      "firstname": "Tomm",
+      "lastname": "Motto",
+      "email": "se@sp",
+      "date": "2021-07-07",
+      "type": "worker",
+      "id": 8
+    },
+    {
+      "firstname": "sdsa",
+      "lastname": "asdsa",
+      "email": "ser@wp.pl",
+      "date": "2021-07-09",
+      "type": "menager",
+      "id": 9
+    },
+    {
+      "firstname": "sad",
+      "lastname": "sad",
+      "email": "2@e",
+      "date": "2021-07-13",
+      "type": "worker",
+      "id": 10
+    },
+    {
+      "firstname": "sds",
+      "lastname": "sdsd",
+      "email": "wer@to",
+      "date": "2021-07-14",
+      "type": "menager",
+      "id": 11
     }
+  ],
+  "cats": [
+    "Inka",
+    "Oreo"
   ]
 }

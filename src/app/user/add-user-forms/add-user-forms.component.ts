@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { CustomEmailValidator } from '../email-validator';
+import { CustomEmailValidator } from '../../email-validator';
 
-import { UserService } from '../user.service';
+import { UsersAPIService } from '../../user-api.service';
+import { UsersService } from '../store/users/users.service';
 
 @Component({
   selector: 'app-add-user-forms',
@@ -16,7 +17,7 @@ export class AddUserFormsComponent {
   users!: string[]
 
   constructor(private fb: FormBuilder,
-    private userService: UserService
+    private userService: UsersAPIService, private usersService: UsersService
   ) {
 
     this.userForms = this.fb.group({
@@ -25,13 +26,24 @@ export class AddUserFormsComponent {
       email: ['', [Validators.required, Validators.email], [new CustomEmailValidator(this.userService).existingEmailValidator('')]],
       date: ['', Validators.required],
       type: ['', Validators.required]
-    })
+    });
   }
 
   submitForm(user: FormGroup) {
-    this.userService.addUser(user.value)
-      .subscribe(user => console.log(user)
-      );
+    this.usersService.addUser(user.value);
+    this.setFormsField()
+
+  }
+
+  setFormsField() {
+    const resetValue = {
+      firstname: '',
+      lastname: '',
+      email:'',
+      date: '',
+      type: ''
+    }
+    this.userForms.setValue(resetValue)
   }
 
   getUsers() {

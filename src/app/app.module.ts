@@ -14,6 +14,11 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { AppRoutingModule } from './app-routing.module';
 import { UsersExistGuard } from './user-exist-guard';
 
+//Store 
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +32,9 @@ import { UsersExistGuard } from './user-exist-guard';
     ButtonsModule.forRoot(),
     ModalModule.forRoot(),
     AppRoutingModule,
+    StoreModule.forRoot([]),
+    EffectsModule.forRoot(),
+    StoreDevtoolsModule.instrument({}),
   ],
   providers: [UsersExistGuard],
   bootstrap: [AppComponent]
